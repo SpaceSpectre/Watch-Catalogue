@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+body
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(4, 11, 26);
+    overflow-x: hidden;
+    color: #fff;
+}
+
+#navLogoImg
+{
+    height: 100px;
+}
+
+#bannerImg
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    transition: 12s ease-in-out;
+}
+
+#bannerImg:hover
+{
+    transform: rotateZ(18000deg) scale(1.2);
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+
+#CRUD
+{
+    text-align: center;
+    /* background-color: hsla(0, 0%, 82%, 0.5); */
+    backdrop-filter: blur(1rem);
+}
+
+.flex
+{
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.logo
+{
+    margin: 0.5rem;
+}
+
+.primary-header
+{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.primary-navigation
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 1rem;
+    z-index: 1000;
+}
+
+.primary-navigation a
+{
+    text-decoration: none;
+    color: white;
+}
+
+.primary-navigation a > [aria-hidden="true"]
+{
+    font-weight: 700;
+    margin-inline-end: 0.75em;
+}
+
+.primary-navigation a:hover
+{
+    transform: scale(1.5);
+    transition: 0.4s ease-in-out;
+}
+
+.mobile-nav-toggle
+{
+    display: none;
+}
+
+#products
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 0 2vw 0 2vw;
+ 
+}
+
+#products img
+{
+    background-color: white;
+}
+
+.box
+{
+    background: rgba(34, 249, 235, 0.319);
+    border-radius: 10px;
+    padding: 20px 0px 5px 0px;
+    transition: 0.2s ease-in-out;
+}
+
+.box:hover
+{
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(108, 43, 173, 0.537);
+}
+
+img
+{
+    width: fit-content;
+    height: 300px;
+    border-radius: 1vh;
+}
+
+.fa
+{
+    line-height: 30px;
+    width:30px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+     
+}
+.text
+{
+    text-align: center;
+    color:#fff;
+}
+p
+{
+    font-size:20px;
+}
+
+#product-form, #update-form, #delete-form, #search-form 
+{
+    width: 280px;
+    padding: 30px;
+    position: relative;
+    top: 100%;
+    left: 50%;
+    border-radius:20px;
+    transform: translate(-50%,0%);
+    background: #191919;
+    text-align: center;
+     
+  }
+#product-form h1, #update-form h1, #delete-form h1, #search-form h1 
+{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+   
+.text-input 
+{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+   
+text-input:focus 
+{
+    width: 250px;
+    border-color: #2ecc71;
+}
+   
+#product-form input[type="submit"], #update-form input[type="submit"], #delete-form input[type="submit"], #search-form  input[type="submit"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+   
+#product-form input[type="submit"]:hover, #update-form input[type="submit"]:hover, #delete-form input[type="submit"]:hover, #search-form  input[type="submit"]:hover
+{
+    background: #2ecc71;
+}
+
+@media (max-width: 50em)
+{
+    .primary-navigation
+    {
+        position: fixed;
+        inset: 0 0 0 40%;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        background-color: hsl(0 0% 0%/ 0.5);
+        backdrop-filter: blur(1rem);
+        margin-right: 0;
+
+        transform: translate(10%);
+        transition: 0.5s ease-in-out;
+    }
+
+    .primary-navigation[data-visible="true"]
+    {
+        transform: translate(100%);
+    }
+
+    .mobile-nav-toggle
+    {
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        aspect-ratio: 1.2;
+        top: 2rem;
+        right : 2rem;
+        z-index: 9999;
+        background-image: url(/images/Expand.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        border: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded="false"]
+    {
+        background-image: url(/images/Colapse.svg);
+    }
+
+    @supports (max-width:40rem)
+    {
+        .primary-navigation
+        {
+            background-color: hsl(0 0% 100%/ 0.1);
+            backdrop-filter: blur(1rem);
+        }
+    }
+}
+
