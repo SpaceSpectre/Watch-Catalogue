@@ -1,7 +1,7 @@
 {
   "name": "watch-catalogue",
   "version": "1.0.0",
-  "description": "Project made by ClumsyCoders",
+  "description": "Project made by ClumsyCoders, this provides the code of a catalogue for watches. You can add, remove and update the database, it is connected to a cloud MongoDB. Further imporvements and features would be added as we develop the project, thanks for installing, hope this helps you.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
